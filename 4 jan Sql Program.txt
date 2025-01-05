@@ -1,0 +1,70 @@
+4jan sql question sheet 
+
+part 1
+
+
+Q1 WAQTD Details of EMPLOYEE TABLE
+select * from emp;
+
+Q2  WAQTD NAMES OF ALL THE EMPLOYEES
+select Ename from emp;
+
+Q3  WAQTD NAME AND SALARY GIVEN TO ALL THE EMPLOYEES.
+select Ename,sal from emp;
+
+Q4  WAQTD NAME AND COMMISSION GIVEN TO ALL THE EMPLOYEES.
+select Ename,commision from emp;
+
+Q5  WAQTD EMPLOYEE ID AND DEPARTMENT NUMBER OF ALL THE EMPLOYEES IN EMP TABLE
+select Emp_id,deptNo from emp;
+
+Q6  WAQTD ENAME AND HIREDATE OF ALL THE EMPLOYEES
+select Ename,hire_date from emp;
+
+Q7  WAQTD NAME AND DESIGNATION OF ALL THE EMPLPOYEES.
+select Ename,designation from emp;
+
+Q8  WAQTD NAME, JOB AND SALARY GIVEN ALL THE EMPLOYEES. 
+select Ename,job,salary from emp;
+
+Q9 WAQTD DNAMES PRESENT IN DEPARTMENT TABLE. 
+select DName from department;
+
+Q10 WAQTD DNAME AND LOCATION PRESENT IN DEPT TABLE.
+select DName,location from department;
+
+
+ 
+part 2
+
+Q1 WAQTD NAME OF THE EMPLOYEE ALONG WITH THEIR ANNUAL SALARY
+select Ename,salary*12 from emp;
+
+Q2 WAQTD ENAME AND JOB FOR ALL THE EMPLOYEE WITH THEIR HALF TERM SALARY.
+select Ename ,job,salary*6 from emp;
+
+Q3 WAQTD ALL THE DETAILS OF THE EMPLOYEES ALONG WITH AN ANNUALBONUS OF 2000
+select * from emp where salary=salary+2000;
+
+Q4 WAQTD NAME SALARY AND SALARY WITH A HIKE OF 10%.
+select cust_name,salary+(10/100*salary)  as salary from inventory.employee;
+
+Q5  WAQTD NAME AND SALARY WITH DEDUCTION OF 25% 
+select cust_name,salary-(25/100*salary)  as salary from employee;
+
+Q6 WAQTD NAME AND SALARY WITH MONTHLY HIKE OF 50
+select Ename ,salary+(50/100*salary) as salary from emp;
+
+Q7 WAQTD NAME AND ANNUAL SALARY WITH DEDUCTION OF 10%. 
+select cust_name ,(salary*12)-(10/100*salary*12) from inventory.employee;
+
+Q8 WAQTD TOTAL SALARY GIVEN TO EACH EMPLOYEE (SAL+COMM)
+select salary+commision as total salary from emp;
+
+Q9 WAQTD DETAILS OF ALL THE EMPLOYEES ALONG WITH ANNUAL SALARY.
+select emp.* ,salary*12 as annualSalary from emp;
+
+Q10 WAQTD NAME AND DESIGNATION ALONG WITH 100 PENALTY IN SALARY.
+select Ename ,designation,,salary-100 as salary  from emp;
+
+
