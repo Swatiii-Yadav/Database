@@ -1,0 +1,53 @@
+11 January 2025
+group by clause, having clause, order by clause
+
+1.List the employees whose name is having letter 'E' as the last but one character
+--> select * from EMPLOYEE 
+where EName Like '%S_';
+
+2. Display all the employee who are getting some commission with their designation is neither MANAGER not ANALYST
+--> select * From EMPLOYEE
+ where commission is not null And 
+department not in ('Manager' ,'Analyst');
+
+3.Display all the employee who are 'SALESMAN's having E as the last but one character in ename but salary having exactly 4 character
+--> select * From EMPLOYEE 
+where department='Salesman' And
+ EName like '%E_' And salary like '----';
+
+
+4.Select all the employees whose are joined before 01-may-81 and after 01-may-80
+--> select * from EMPLOYEE where hireDate>01-05-80 And hireDate<01-05-81
+
+5.Display the deptno which is having the maximum salary and maximum salary more than 1500 earned by the employee and job description not as 
+a clerk and sort by descending order.
+--> select max(salary),deptNo from EMPLOYEE where not department='Clerk'
+group by deptNo
+having max(salary)>1500
+order by deptNo desc;
+
+6.Display the department number which are having more than 200 as their commission along with employees whose name having 'A' is one of character.
+-->select deptNo from EMPLOYEE 
+where commission >200 And EName like '%A_';
+
+7.Display department wise maximum and minimum salary of all salesman.
+-->select max(salary),min(salary),deptNo
+from EMPLOYEE
+group by deptNo;
+
+8.Write the query to get the department and department wise total(sum) salary, display it in descending order according to salary.
+-->select  deptNo,sum(salary) as totalSalary
+ from EMPLOYEE 
+group by deptNo
+order by totalSalary desc;
+
+9.WAQTD NO OF EMPLOYEES, DEPTNO AT LEAST 2 EMPLOYEES ARE WORKING AS MANAGER IN EACH DEPARTMENT.
+-->select count(*) from EMPLOYEE
+where department='Manager'
+group by deptNo
+having count(*)>=2;
+
+10.WAQTD SAL OF THE EMPLOYEES WHO IS GETTING DUPLICATED SALARY.
+-->select count(*) from EMPLOYEE 
+group by salary 
+having count(*)>1;
