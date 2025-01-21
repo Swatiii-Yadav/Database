@@ -1,0 +1,30 @@
+ASSIGNEMENT ON Multirow Function()
+Part-1
+
+1.WAQTD NUMBER OF EMPLOYEES GETTING SALARY LESS THAN 2000 IN DEPTNO 10
+--> select count(*) from emp where salary < 2000 And deptNo=10;
+
+2.WAQTD TOTAL SALARY NEEDED TO PAY EMPLOYEES WORKING AS CLERK
+--> select sum(salary) from emp where  job='Clerk';
+
+3.WAQTD AVERAGE SALARY NEEDED TO PAY ALL EMPLOYEES
+--> salary avg(Salary) from emp;
+
+4.WAQTD NUMBER OF EMPLOYEES HAVING 'A' AS THEIR FIRST CHARACTER
+--> select count(*) from emp where name like 'A%';
+
+5.WAQTD NUMBER OF EMPLOYEES WORKING AS CLERK OR MANAGER
+--> select count(*) from emp where job in ('clerk' ,'manager');
+
+7.WAQTD NUMBER OF EMPLOYEES REPORTING TO 7839 (MGR)
+--> select count(*) from emp MGR=7839;
+
+8.WAQTD NUMBER OF EMPLOYEES GETTING COMISSION IN DEPTNO 30
+--> select count(*) from emp where commission is not null and deptNo=30;
+
+9.WAQTD AVG SAL, TOTAL SAL, NUMBER OF EMPS AND MAXIMUM SALARY GIVEN TO EMPLOYEES WORKING AS PERSIDENT
+-->select avg(salary),sum(salary),count(*),max(salary)from emp where job='president';
+
+10.WAQTD NUMBER OF EMPLOYEES HAVING 'A' IN THEIR NAMES
+-->select count(*) from emp where name like '%A%'
+
