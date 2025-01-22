@@ -1,0 +1,31 @@
+Part-2
+
+11.WAQTD NUMBER OF EMPS AND TOTAL SALARY NEEDED TO PAY THE EMPLOYEES WHO HAVE 2 CONSICUTIVE L's IN THEIR NAMES
+--> select count(*),sum(salary) from emp where name='%LL%';
+
+12.WAQTD NUMBER OF DEPARTMENTS PRESENT IN EMPLOYEE TABLE
+--> select count(*),sum(salary) from emp where name='%LL%';
+
+13.WAQTD NUMBER OF EMPLOYEES HAVING CHARACTER 'Z' IN THEIR NAMES
+--> select count(*) from emp where name='%Z%;
+
+14.WAQTD NUMBER OF EMPLOYEES HAVING 'S' IN THEIR NAMES.
+--> select count(*) from emp where name='%S';
+
+15.WAQTD TOTAL SALARY GIVEN TO EMPLOYEES WORKING AS CLERK IN DEPT 30
+--> select sum(salary) from emp where job='Clerk' and deptNo=30;
+
+16.WAQTD MAXIMUM SALARY GIVEN TO THE EMPLOYEES WORKING AS ANALYST
+--> select max(salary) from emp where job='Analyst';
+
+17.WAQTD NUMBER OF DISTINCT SALARIES PRESENT IN EMPLOYEE TABLE
+-->select distinct salary from emp ;
+
+18.WAQTD NUMBER OF JOBS PRESENT IN EMPLOYEE TABLE
+--> select count(*) from emp group by job;
+
+19.WATQD AVG SALARY GIVEN TO THE CLERK
+--> select avg(salary) from emp where job='clerk';
+
+20.WAQTD MINIMUM SALARY GIVEN TO THE EMPLOYEES WHO WORK IN DEPT 10 AS MANAGER OR A CLERK
+select min(salary) from emp where job in('manager','clerk') And deptNo=10;
