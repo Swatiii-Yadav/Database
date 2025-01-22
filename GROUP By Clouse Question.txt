@@ -1,0 +1,32 @@
+GROUP By Clouse Question
+-> Group By Clouse is used to group the records
+->It execute row by row.
+->multirow function is not pass in group by Clouse.
+
+1) WQTD number of employee who's working in each department.
+--> select count(*),deptNo from emp 
+     group by deptNo;
+
+2) WQTD number of employee who's working in each job.
+--> select count(*),job from emp 
+     group by job;
+
+3) WQTD number of employee who's working  as manager in each job
+--> select count(*),job from emp 
+     where job='manager'
+     group by job;
+
+4) WQTD number of employee and max salary of emp and total salary  who's working  as salesman
+and hired in month of august and name should not start with 'p' and 'a' in a deptNo 100,108,143
+in each deptNo
+--> select count(*),max(salary),sum(salary),deptNo from emp 
+     where job='salesman' and hireDate like '%_Aug_%' And name not like 'p%' And name not like 'p%'
+     deptNo in(100,108,143)
+     group by deptNo;
+
+5) WAQTD No. of employee and max salary of emp and total salary  who's not working as clerk or president
+ they hired in deptNo 40 and they hired on 2023 and emp no 7902 in each  department.
+--> select count(*),max(salary),sum(salary),deptNo from emp 
+     where job not in ('clerk','president') And deptNo=40 and hireDate like '%_%_2023' And emId=7902
+     group by deptNo;
+
