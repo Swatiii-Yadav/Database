@@ -1,0 +1,37 @@
+Having Clouse Question Part-2
+-----------------------------------------------------------------------------------------------------
+
+1) WAQTD NO of Employee Who's Working in each deptNo and having atleas 4 employee in that deptNo.
+--> select count(*),deptNo
+from emp
+group by deptNo 
+having count(*)>=4;
+
+2) WAQTD NO of Employee and max salary of emp  Who's Working  as a manager in each job and having atleast
+   3 employee and getting max salary more than 9000.
+--> select count(*),max(salary),job
+ from emp
+where job='manager'
+group by job 
+having count(*)>=3 and max(salary)>9000;
+
+
+3) WAQTD NO of Employee Who's Working in a deptNo 30 and having atleast 4 employee
+ and getting total salary sum as 2850.
+--> select count(*),deptNo
+ from emp
+where deptNo=30
+group by deptNo 
+having count(*)>=4 and sum(salary)=2850;
+
+4) WAQTD NO of Employee, max salary ,min salary of employee  Who's not  Working  as a clerk or manager 
+ in a deptNo 20  and name start with 'B' and they  hired in the month of march and they don't have 
+reporting manager and getting commission exactly 3 digits in each deptNo and having at most 
+6 employee and getting max salary 5000 and min salary 150;
+--> select count(*),max(salary),,min(salary),deptNo
+ from emp
+where job not in('clerk', 'manager') and deptNo=20 and name like 'B%' and hireDate like'%_March_%'
+And Mgr is null and commission like '---'
+group by deptNo 
+having count(*)<=6 and max(salary)=5000 And min(salary)=150;
+
