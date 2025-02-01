@@ -1,0 +1,54 @@
+ASSIGNMENT ON NESTED SUB OUERY: 
+
+------------------
+REMEMBER : 
+MAXIMUM MAX() < 
+MINIMUM MIN() > 
+------------------
+
+61. WAQTD 2ND MINIMUM SALARY 
+-->select min(salary) from emp where salary>(select minsalary)from emp);
+
+62. WAQTD 5TH MAXIMUM SALARY 
+-->select max(salary) from emp where salary<(select max(salary)from emp salary <
+(select max(salary)from emp salary <));
+
+63. WAQTD NAME OF THE EMPLOYEE EARNING 3RD MAXIMUM SALARY 
+-->select Name from emp where salary IN (select max(salary)from emp salary <
+(select max(salary)from emp salary <(select max(salary) from emp where salary)));
+
+64. WAQTD EMPNO OF THE EMPLOYEE EARNING 2D MAXIMUM SALARY.
+-->select EmpNO from emp where salary IN (select max(salary)from emp salary <
+(select max(salary)from emp));
+
+65. WAQTD DEPARTMENT NAME OF AN EMPLOYEE GETTING 4TH MAX SAL 
+-->select DName from dept where Exists (select max(salary) from emp 
+where salary<(select max(salary) from emp 
+where salary<(select max(salary) from emp 
+where salary<(select max(salary) from emp 
+where salary<))));
+
+66. WAQTD DETAILS OF THE EMPLOYEE WHO WAS HIRED 2nd.
+-->select * from Emp where hireDate In(select hireDate from Emp where 
+hireDate In(select hireDate from Emp));
+
+67. WAQTD NAME OF THE EMPLOYEE HIRED BEFORE THE LAST EMPLOYEE.
+--> select Name from emp  where hireDate< select max(hireDate) from emp);
+
+68. WAQTD LOC OF THE EMPLOYEE WHO WAS HIRED FIRST.
+-->select loc from dept where deptNo=(select deptNo from emp where 
+hireDate= (select min(hireDate) from emp));
+
+69. WAQTD DETAILS OF THE EMPLOYEE EARNING 7TH MINIMUM SALARY.
+--> select * from emp where salary>
+(select min(salary) from emp where salary>
+(select min(salary) from emp where salary>
+(select min(salary) from emp where salary>
+(select min(salary) from emp where salary>
+(select min(salary) from emp where salary>
+(select min(salary) from emp where salary>
+(select min(salary) from emp))))));
+
+70. WAQTD DNAME OF EMPLOYEE GETTING 2ND MAXIMUM SALARY.
+-->select DName from dept where Exists (select max(salary) from emp 
+where salary<(select max(salary) from emp);
