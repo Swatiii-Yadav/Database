@@ -1,0 +1,53 @@
+ASSIGNMENT ON INNER JOIN : 
+1.NAME OF THE EMPLOYEE AND HIS LOCATION OF ALL THE EMPLOYEES. 
+-->select E.ename ,d.loc from emp as e
+ inner Join dept as d on d.deptNo=E.deptNo;
+
+2.WAQTD DNAME AND SALARY FOR ALL THE EMPLOYEE WORKING IN ACCOUNTING.
+-->select d.Dname , E.sal from emp as e
+inner Join  dept as d on e.deptNo=d.deptNo
+where d.DName='ACCOUNTING'.
+ 
+3.WAQTD DNAME AND ANNUAL SALARY FOR ALL EMPLOYEES WHOS SALARY IS MORE THAN 2340.
+--> select d.Dname ,e.salary*12 from emp as e
+inner Join dept as d  on e.deptNo=d.deptNo
+where e.salary *12 >2340;
+
+4.WAQTD ENAME AND DNAME FOR EMPLOYEES HAVING CAHARACTER 'A' IN THEIR DNAME.
+--> select  e.Ename,d.Dname from emp as e
+inner Join dept as d  on e.deptNo=d.deptNo
+where d.Dname like '%A%';
+
+5.WAQTD ENAME AND DNAME FOR ALL THE EMPLOYEES WORKING AS SALESMAN.
+-->select  e.Ename, d.Dname from emp as e
+inner Join  dept as d on e.deptNo=d.deptNo
+where e.job='SALESMAN'.
+
+6.WADTD DNAME AND JOB FOR ALL THE EMPLOYEES WHOS JOB AND DNAME STARTS WITH CHARACTER 'S'.
+ --> select d.Dname ,e.job from emp as e
+inner Join dept as d on e.deptNo=d.deptNo
+where  e.Job like 'S%' And  d.Dname like 'S%';
+
+7.WAQTD DNAME AND MGR NO FOR EMPLOYEES REPORTING TO 7839.
+--> select d.Dname ,e.MGR from emp as e
+inner Join dept as d on d.deptNo=e.deptNo
+where e.MGR=7839;
+
+8.WAQTD DNAME AND HIREDATE FOR EMPLOYEES HIRED AFTER 83 INTO ACCOUNTING OR RESEARCH DEPT.
+-->select d.Dname , e.hireDate from emp as e
+inner Join  dept as d on e.deptNo=d.deptNo
+where e.hireDate>31-Dec-83 And 
+d.DName in('ACCOUNTING' , 'RESEARCH');
+
+
+9.WAQTD ENAME AND DNAME OF THE EMPLOYEES WHO ARE GETTING COMM IN DEPT 10 OR 30.
+-->select e.Ename, d.Dname  from emp as e
+inner Join  dept as d on e.deptNo=d.deptNo
+where e.comm Is Not Null
+and e.deptNo in(10,30).
+
+10.WAQTD DNAME AND EMPNO FOR ALL THE EMPLOYEES WHO'S EMPNO ARE (7839,7902) AND ARE WORKING IN LOC NEW YORK.
+-->select  e.empNo,d.Dname  from emp as e
+inner Join  dept as d on e.deptNo=d.deptNo
+where e.empNo in('7839','7902') And
+d.loc='NEW YORK';
